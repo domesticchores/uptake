@@ -1,0 +1,5 @@
+VONAGE_API_KEY = "xxxxxx"
+VONAGE_SECRET = "xxxxxxxxxxxxxxxxxx"
+VONAGE_API_HOST = "api.nexmo.com"
+VONAGE_HOST_NUMBER = "+1234567890"
+VONAGE_DEST_NUMBER = "+1234567890"
