@@ -21,11 +21,15 @@ scheduler.start()
 app = Flask(__name__)
 
 # TO-DO: allow dynamic timezone based on device TZ
-TIMEZONE = pytz.timezone("America/Chicago")
+TIMEZONE = pytz.timezone("America/New_York")
 temp_event = []
 
 def sendMessage(event_data):
     print(f"sent {event_data[0]} @ time {event_data[1]}")
+    message = SmsMessage(to=VONAGE_DEST_NUMBER, from_=VONAGE_HOST_NUMBER, text=f"REMINDER: {event_data[0]} is scheduled for {event_data[1]}")
+    response = client.sms.send(message)
+    print(response.model_dump_json(exclude_unset=True))
+
 
 def DEV_process(user_input):
     global phase, temp_event

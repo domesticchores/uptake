@@ -196,3 +196,7 @@ cython_debug/
 
 # python config
 config.py
+
+# google api credentials
+credentials.json
+token.json
